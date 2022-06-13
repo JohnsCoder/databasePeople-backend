@@ -5,12 +5,12 @@
 
 Veja a outra parte do projeto: **[phone-book-frontend](https://github.com/JohnsCoder/phone-book-frontend)**
 
-**| Node.js |** 
+**| Node.js | MySQL |** 
 # 
 # Conteúdo -
 - **[Progresso](#progresso--)**
 - **[Scripts](#scripts--)**
-- **[Tecnologias](#tecnologias--)**
+- **[Dependências](#dependencias--)**
 # 
 # Progresso -
 
@@ -31,7 +31,10 @@ Veja a outra parte do projeto: **[phone-book-frontend](https://github.com/JohnsC
 # 
 # Scripts -
 
-Obs. para executar todos comandos corretamente confira se todas **[Dependências](#Dependências)** estão instaladas corretamente.
+Obs. 
+- Para executar todos comandos corretamente confira se todas **[Dependências](#Dependências--)** estão instaladas corretamente;
+- O banco de dados utilizado foi o Mysql, para pegar os scripts SQL: **[phone-book-DDL](https://github.com/JohnsCoder/phone-book-DDL)**
+
 
 
 instale as dependências do projeto -
@@ -50,7 +53,7 @@ yarn dev
 
 
 # 
-# Tecnologias -
+# Dependências -
 
 
 - **[Docker](https://www.docker.com/get-started/)**
