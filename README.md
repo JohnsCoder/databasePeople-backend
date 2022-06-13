@@ -1,8 +1,9 @@
-# MyAPI
+# PhoneBook
 
-### Este projeto com o objetivo de demonstrar habilidade back-end, front-end e database.
+### Projeto backend.
+Veja a outra parte do projeto: **[phone-book-frontend](https://github.com/JohnsCoder/phone-book-frontend)**
 
-**Node.js | React.js | MySQL** 
+**| Node.js |** 
 # 
 # Conteúdo -
 - **[Progresso](#progresso--)**
