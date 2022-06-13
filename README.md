@@ -1,6 +1,8 @@
 # PhoneBook
 
-### Projeto backend.
+### Lista Telefônica.
+**BACKEND**
+
 Veja a outra parte do projeto: **[phone-book-frontend](https://github.com/JohnsCoder/phone-book-frontend)**
 
 **| Node.js |** 
