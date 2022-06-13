@@ -1,9 +1,9 @@
-# PhoneBook
+# DataBase People
 
-### Lista Telefônica.
+### CRUD - Lista Telefônica
 **BACKEND**
 
-Veja a outra parte do projeto: **[phone-book-frontend](https://github.com/JohnsCoder/phone-book-frontend)**
+Veja a outra parte do projeto: **[phone-book-frontend](https://github.com/JohnsCoder/databasePeople-frontend)**
 
 **| Node.js | MySQL |** 
 # 
@@ -33,7 +33,7 @@ Veja a outra parte do projeto: **[phone-book-frontend](https://github.com/JohnsC
 
 Obs. 
 - Para executar todos comandos corretamente confira se todas **[Dependências](#Dependências--)** estão instaladas corretamente;
-- O banco de dados utilizado foi o Mysql, para pegar os scripts SQL: **[phone-book-DDL](https://github.com/JohnsCoder/phone-book-DDL)**
+- O banco de dados utilizado foi o Mysql, para pegar os scripts SQL: **[phone-book-DDL](https://github.com/JohnsCoder/databasePeople-DDL)**
 
 
 

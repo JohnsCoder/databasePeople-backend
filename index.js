@@ -75,7 +75,7 @@ app.listen(3001, () => {
   console.log({
     get: "http://localhost:3001/getUsers",
     post: "http://localhost:3001/postUsers",
-    post: "http://localhost:3001/editUsers",
-    post: "http://localhost:3001/delUsers"
+    put: "http://localhost:3001/editUsers",
+    delete: "http://localhost:3001/delUsers"
   });
 });

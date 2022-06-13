@@ -1,8 +1,8 @@
 {
-  "name": "my-api",
+  "name": "database-people-backend",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/JohnsCoder/myAPI.git",
+  "repository": "https://github.com/JohnsCoder/databasePeople-backend.git",
   "author": "JohnsCoder <joaopdossantos1515@gmail.com>",
   "license": "MIT",
   "dependencies": {
