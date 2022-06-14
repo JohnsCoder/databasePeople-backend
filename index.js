@@ -8,7 +8,7 @@ require("dotenv/config");
 const db = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
 
 const corsOptions = {
-  origin: process.env.ORIGIN_APP,
+  origin: "*",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   optionsSuccessStatus: 200,
   allowedHeaders: "*",
