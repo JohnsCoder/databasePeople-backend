@@ -7,15 +7,14 @@ require("dotenv/config");
 
 const db = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
 
-// const corsOptions = {
-//   origin: 'https://database-people-frontend.vercel.app',
-//   optionsSuccessStatus: 200
-// }
+const corsOptions = {
+  origin: 'https://database-people-frontend.vercel.app',
+}
 
 db.connect()
 
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.get("/users", ({}, res) => {
   db.query(
