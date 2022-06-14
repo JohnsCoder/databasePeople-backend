@@ -5,22 +5,19 @@ const cors = require("cors");
 const fs = require("fs");
 require("dotenv/config");
 
-const db = mysql.createConnection({
-  host: process.env.DATABASE_HOST,
-  user: process.env.DATABASE_USER,
-  password: process.env.DATABASE_PASSWORD,
-  database: process.env.DATABASE,
-});
+const db = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
 
 // const corsOptions = {
 //   origin: 'https://database-people-frontend.vercel.app',
 //   optionsSuccessStatus: 200
 // }
 
+db.connect()
+
 app.use(express.json());
 app.use(cors());
 
-app.get("/getUsers", ({}, res) => {
+app.get("/users", ({}, res) => {
   db.query(
     "SELECT id, first_name, last_name, email, salary FROM users ORDER BY first_name ASC",
     (err, result) => {
@@ -30,7 +27,7 @@ app.get("/getUsers", ({}, res) => {
   );
 });
 
-app.post("/postUsers", (req, res) => {
+app.post("/newUsers", (req, res) => {
   db.query(
     "INSERT INTO users ( first_name, last_name, email, salary, password_hash) VALUES ( ?, ?, ?, ?, ? )",
     [
@@ -48,13 +45,11 @@ app.post("/postUsers", (req, res) => {
 });
 
 app.delete("/delUsers/:id", (req, res) => {
-  db.query("DELETE FROM users WHERE id = ?",[req.params.id],
-  (err, result ) => {
-    if(err) throw err;
-   res.send(result) 
-  }
-  )
-})
+  db.query("DELETE FROM users WHERE id = ?", [req.params.id], (err, result) => {
+    if (err) throw err;
+    res.send(result);
+  });
+});
 
 app.put("/editUsers", (req, res) => {
   db.query(
@@ -68,10 +63,12 @@ app.put("/editUsers", (req, res) => {
     ],
     (err, result) => {
       if (err) throw err;
-      console.log(req.body)
+      console.log(req.body);
       res.send(result);
     }
   );
 });
 
-app.listen(process.env.PORT || 3001, () => console.log('Your Application is running!'));
+app.listen(process.env.PORT || 3001, () =>
+  console.log("Your Application is running!")
+);
