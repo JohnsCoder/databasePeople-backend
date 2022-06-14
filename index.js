@@ -6,10 +6,10 @@ const fs = require("fs");
 require("dotenv/config");
 
 let db = mysql.createConnection({
-  host: "us-cdbr-east-05.cleardb.net",
-  user: "b92f2f39dd88fc",
-  password: "624fba0e",
-  database: "heroku_ce9c470ec01582d",
+  host: process.env.DATABASE_HOST,
+  user: process.env.DATABASE_USER,
+  password: process.env.DATABASE_PASSWORD,
+  database: process.env.DATABASE,
 });
 
 db.connect();
