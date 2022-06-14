@@ -5,16 +5,26 @@ const cors = require("cors");
 const fs = require("fs");
 require("dotenv/config");
 
-const db = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
+let db = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
 
+function handleDisconnect(localDb) {
+  localDb.on("error", function (err) {
+    console.log("Re-connecting lost connection");
+    db.destroy();
+    db = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
+    handleDisconnect(db);
+    db.connect(function (err) {
+      if (err) console.log("error connecting:" + err.stack);
+    });
+  });
+}
+handleDisconnect(db);
 const corsOptions = {
   origin: "*",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   optionsSuccessStatus: 200,
   allowedHeaders: "*",
 };
-
-db.connect();
 
 app.use(express.json());
 app.use(cors(corsOptions));
