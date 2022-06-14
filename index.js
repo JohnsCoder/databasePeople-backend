@@ -71,11 +71,11 @@ app.put("/editUsers", (req, res) => {
   );
 });
 
-app.listen(3001, () => {
-  console.log({
-    get: "http://localhost:3001/getUsers",
-    post: "http://localhost:3001/postUsers",
-    put: "http://localhost:3001/editUsers",
-    delete: "http://localhost:3001/delUsers"
-  });
+app.listen(process.env.PORT || 3001, () => {
+  // console.log({
+  //   get: "http://localhost:3001/getUsers",
+  //   post: "http://localhost:3001/postUsers",
+  //   put: "http://localhost:3001/editUsers",
+  //   delete: "http://localhost:3001/delUsers"
+  // });
 });
