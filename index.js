@@ -11,7 +11,7 @@ const corsOptions = {
   origin: process.env.ORIGIN_APP,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   optionsSuccessStatus: 200,
-  allowedHeaders: process.env.ORIGIN_APP,
+  allowedHeaders: "*",
 };
 
 db.connect();
