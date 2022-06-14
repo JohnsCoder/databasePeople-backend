@@ -6,10 +6,10 @@ const fs = require("fs");
 require("dotenv/config");
 
 let db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
+  host: process.env.DATABASE_HOST,
+  user: process.env.DATABASE_USER,
   password: process.env.DATABASE_PASSWORD,
-  database: "js_data",
+  database: process.env.DATABASE,
 });
 
 db.connect();

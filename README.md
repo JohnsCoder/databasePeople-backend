@@ -65,5 +65,5 @@ yarn dev
 #
 ## Bibliotecas -
 - **Nodemon**
-- **Axios**
 - **Express**
+- **MySQL**
