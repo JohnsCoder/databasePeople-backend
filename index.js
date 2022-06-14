@@ -12,14 +12,13 @@ const db = mysql.createConnection({
   database: process.env.DATABASE,
 });
 
-const corsOptions = {
-  origin: 'https://database-people-frontend.vercel.app',
-  optionsSuccessStatus: 200
-}
-db.connect();
+// const corsOptions = {
+//   origin: 'https://database-people-frontend.vercel.app',
+//   optionsSuccessStatus: 200
+// }
 
 app.use(express.json());
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.get("/getUsers", ({}, res) => {
   db.query(
@@ -75,11 +74,4 @@ app.put("/editUsers", (req, res) => {
   );
 });
 
-app.listen(process.env.PORT || 3001, () => {
-  // console.log({
-  //   get: "http://localhost:3001/getUsers",
-  //   post: "http://localhost:3001/postUsers",
-  //   put: "http://localhost:3001/editUsers",
-  //   delete: "http://localhost:3001/delUsers"
-  // });
-});
+app.listen(process.env.PORT || 3001, () => console.log('Your Application is running!'));
