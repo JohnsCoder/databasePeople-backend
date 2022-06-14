@@ -11,7 +11,7 @@ const corsOptions = {
   origin: process.env.ORIGIN_APP,
   methods: "GET,HEAD,PUT,POST,DELETE",
   optionsSuccessStatus: 200,
-  allowedHeaders: ["Access-Control-Allow-Origin". process.env.ORIGIN_APP]
+  allowedHeaders: process.env.ORIGIN_APP
 }
 
 db.connect()
