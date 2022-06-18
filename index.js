@@ -5,20 +5,42 @@ const cors = require("cors");
 const fs = require("fs");
 require("dotenv/config");
 
-let db = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
+const db = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
+
+// function handleDisconnect(localDb) {
+//   localDb.on("error", function (err) {
+//     console.log("Re-connecting lost connection");
+//     db.destroy();
+//     mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
+//     handleDisconnect(db);
+//     db.connect(function (err) {
+//       if (err) console.log("error connecting:" + err.stack);
+//     });
+//   });
+// }
+// handleDisconnect(db);
 
 function handleDisconnect(localDb) {
   localDb.on("error", function (err) {
-    console.log("Re-connecting lost connection");
-    db.destroy();
-    db = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
-    handleDisconnect(db);
-    db.connect(function (err) {
-      if (err) console.log("error connecting:" + err.stack);
-    });
+    if (!err.fatal) {
+      return;
+    }
+    if (err.code !== "PROTOCOL_CONNECTION_LOST") {
+      console.log("PROTOCOL_CONNECTION_LOST");
+      throw err;
+    }
+    log.error("The database is error:" + err.stack);
+
+    mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
+
+    console.log("kfid");
+
+    console.log("kfdb");
+    handleDisconnect();
   });
 }
-handleDisconnect(db);
+handleDisconnect();
+
 const corsOptions = {
   origin: "*",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
