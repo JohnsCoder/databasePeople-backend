@@ -5,8 +5,9 @@ const cors = require("cors");
 const fs = require("fs");
 require("dotenv/config");
 
+const db = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
+
 function handleDisconnect(localDb) {
-  const db = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
   localDb.on("error", function (err) {
     console.log("Re-connecting lost connection");
     db.destroy();
