@@ -5,7 +5,7 @@ const cors = require("cors");
 const fs = require("fs");
 require("dotenv/config");
 
-const db = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
+let db = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
 
 function handleDisconnect(localDb) {
   localDb.on("error", function (err) {
