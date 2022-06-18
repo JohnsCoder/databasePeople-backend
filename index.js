@@ -39,7 +39,7 @@ function handleDisconnect(localDb) {
     handleDisconnect();
   });
 }
-handleDisconnect();
+handleDisconnect(db);
 
 const corsOptions = {
   origin: "*",
