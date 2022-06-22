@@ -1,50 +1,50 @@
 # DataBase People
 
-### CRUD - Lista Telefônica
+### CRUD - Phone Book
 **BACKEND**
 
-Veja a outra parte do projeto: **[phone-book-frontend](https://github.com/JohnsCoder/databasePeople-frontend)**
+See the other part here: **[phone-book-frontend](https://github.com/JohnsCoder/databasePeople-frontend)**
 
 **| Node.js | MySQL |** 
 # 
-# Conteúdo -
-- **[Progresso](#progresso--)**
+# Summary -
+- **[Progress](#progress--)**
 - **[Scripts](#scripts--)**
-- **[Dependências](#dependencias--)**
+- **[Dependencies](#dependencies--)**
 # 
-# Progresso -
+# Progress -
 
 
 ### Loading… 110%
 
 
 - **Back-End**
-    - ~~Criar rota /get~~
-    - ~~Criar rota /post~~
-    - ~~Criar rota /put~~
-    - ~~Criar rota /delete~~
+    - ~~Create **get** route~~
+    - ~~Create **post** route~~
+    - ~~Create **put** route~~
+    - ~~Create **delete** route~~
 
 # 
-- **Outros**
-    - ~~Encriptar Senhas~~
-    - Adicionar Autenticação
+- **Others**
+    - ~~Encrypt password~~
+    - Add Authentication
 # 
 # Scripts -
 
-Obs. 
-- Para executar todos comandos corretamente confira se todas **[Dependências](#Dependências--)** estão instaladas corretamente;
-- O banco de dados utilizado foi o Mysql, para pegar os scripts SQL: **[phone-book-DDL](https://github.com/JohnsCoder/databasePeople-DDL)**
+Note:
+- To execute all the comands, first check if all **[Dependencies](#dependencies--)** were installed correctly.
+- The used database was MySQL, to get the DDL scripts acess: **[phone-book-DDL](https://github.com/JohnsCoder/databasePeople-DDL)**
 
 
 
-instale as dependências do projeto -
+install all project dependencies -
 
 ```bash
 yarn 
 
 ```
 
-inicie o back-end -
+start the back-end -
 
 ```bash
 yarn dev
@@ -53,7 +53,7 @@ yarn dev
 
 
 # 
-# Dependências -
+# Dependencies -
 
 
 - **[Docker](https://www.docker.com/get-started/)**
@@ -63,7 +63,7 @@ yarn dev
 - **[git](https://git-scm.com/downloads)**
 
 #
-## Bibliotecas -
+## Library -
 - **Nodemon**
 - **Express**
 - **MySQL**
