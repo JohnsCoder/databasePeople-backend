@@ -33,7 +33,7 @@ See the other part here: **[phone-book-frontend](https://github.com/JohnsCoder/d
 
 Note:
 - To execute all the comands, first check if all **[Dependencies](#dependencies--)** were installed correctly.
-- The used database was MySQL, to get the DDL scripts acess: **[phone-book-DDL](https://github.com/JohnsCoder/databasePeople-DDL)**
+- The used database was MySQL, to get the DDL scripts access the paste SQL.**
 
 
 
