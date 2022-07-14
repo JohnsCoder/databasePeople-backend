@@ -5,41 +5,20 @@ const cors = require("cors");
 const fs = require("fs");
 require("dotenv/config");
 
-let db = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
+let db = mysql.createConnection(process.env.DATABASE_URL);
 
 function handleDisconnect(localDb) {
   localDb.on("error", function (err) {
     console.log("Re-connecting lost connection");
     db.destroy();
-    db = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
+    db = mysql.createConnection(process.env.DATABASE_URL);
     handleDisconnect(db);
-    db.connect(function (err) {
+    db.connect(function (err) {s
       if (err) console.log("error connecting:" + err.stack);
     });
   });
 }
 handleDisconnect(db);
-
-// function handleDisconnect(localDb) {
-//   localDb.on("error", function (err) {
-//     if (!err.fatal) {
-//       return;
-//     }
-//     if (err.code !== "PROTOCOL_CONNECTION_LOST") {
-//       console.log("PROTOCOL_CONNECTION_LOST");
-//       throw err;
-//     }
-//     log.error("The database is error:" + err.stack);
-
-//     mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
-
-//     console.log("kfid");
-
-//     console.log("kfdb");
-//     handleDisconnect();
-//   });
-// }
-// handleDisconnect(db);
 
 const corsOptions = {
   origin: "*",
@@ -103,6 +82,6 @@ app.put("/editUsers", (req, res) => {
   );
 });
 
-app.listen(process.env.PORT || 3001, () =>
-  console.log("Your Application is running!")
+const listener = app.listen(process.env.PORT || 8000, () =>
+  console.log("Your Application is running on port: " + listener.address().port)
 );
