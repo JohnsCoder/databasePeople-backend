@@ -34,7 +34,7 @@ app.get("/users", ({}, res) => {
   db.query(
     "SELECT id, first_name, last_name, email, salary FROM users ORDER BY first_name ASC",
     (err, result) => {
-      if (err) throw err;
+      if (err) throw err.message;
       res.send(result);
     }
   );
@@ -51,7 +51,7 @@ app.post("/newUsers", (req, res) => {
       req.body.password_hash,
     ],
     (err, result) => {
-      if (err) throw err;
+      if (err) throw err.message;
       res.send(result);
     }
   );
@@ -59,7 +59,7 @@ app.post("/newUsers", (req, res) => {
 
 app.delete("/delUsers/:id", (req, res) => {
   db.query("DELETE FROM users WHERE id = ?", [req.params.id], (err, result) => {
-    if (err) throw err;
+    if (err) throw err.message;
     res.send(result);
   });
 });
@@ -75,7 +75,7 @@ app.put("/editUsers", (req, res) => {
       req.body.id,
     ],
     (err, result) => {
-      if (err) throw err;
+      if (err) throw err.message;
       console.log(req.body);
       res.send(result);
     }
