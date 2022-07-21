@@ -14,7 +14,7 @@
   },
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "pm2 start index.js --watch"
+    "start": "pm2-runtime start ecosystem.config.js --env production -i max" 
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
