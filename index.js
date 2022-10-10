@@ -13,7 +13,8 @@ function handleDisconnect(localDb) {
     db.destroy();
     db = mysql.createConnection(process.env.DATABASE_URL);
     handleDisconnect(db);
-    db.connect(function (err) {s
+    db.connect(function (err) {
+      s;
       if (err) console.log("error connecting:" + err.stack);
     });
   });
